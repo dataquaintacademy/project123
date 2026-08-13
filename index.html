@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillForge · Training Institute</title>
+  <!-- simple inline styling: clean, modern, responsive -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f8faff;
+      color: #1e1e2f;
+      line-height: 1.5;
+      padding: 2rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 2.5rem;
+      box-shadow: 0 20px 40px -12px rgba(0, 20, 40, 0.15);
+      padding: 2.5rem 2rem;
+    }
+
+    /* header / branding */
+    .institute-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #eef2f9;
+      padding-bottom: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .brand h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0b1b33;
+    }
+
+    .brand .tagline {
+      font-size: 1rem;
+      color: #4a5b7a;
+      margin-top: 0.25rem;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+
+    .brand span {
+      background: #d0e0ff;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #1d4a9e;
+      margin-left: 0.5rem;
+      display: inline-block;
+    }
+
+    .cta-top {
+      background: #1d4a9e;
+      color: white;
+      border: none;
+      padding: 0.7rem 1.8rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: default;
+      box-shadow: 0 6px 14px rgba(26, 67, 153, 0.25);
+      transition: 0.2s;
+    }
+
+    .cta-top:hover {
+      background: #0f3a7a;
+      transform: scale(1.02);
+    }
+
+    /* hero / intro */
+    .hero {
+      background: linear-gradient(145deg, #f0f6ff, #ffffff);
+      padding: 2.2rem 2rem;
+      border-radius: 2rem;
+      margin-bottom: 2.8rem;
+      border: 1px solid #e6edf8;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #0b1b33;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #2c3f5e;
+      max-width: 700px;
+      margin-top: 0.6rem;
+    }
+
+    .hero .highlight {
+      background: #dce8ff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    /* course grid */
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.8rem;
+      color: #0b1b33;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-title small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #4f6a8f;
+      margin-left: 0.5rem;
+    }
+
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem 1.8rem;
+      margin-bottom: 2.8rem;
+      border-radius: 1.8rem;
+      padding: 1.8rem 1.5rem 1.8rem;
+    }
+
+    .course-card:hover {
+    }
+
+    .course-icon {
+      font-size: 2.4rem;
+
+    .course-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #0b1b33;
+    }
+
+    .course-card .badge {
+      display: inline-block;
+      background: #e5edfb;
+      color: #1d4a9e;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      letter-spacing: 0.3px;
+      margin-top: 0.2rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .course-card p {
+      color: #2d405b;
+      font-size: 0.95rem;
+      margin: 0.6rem 0 0.2rem;
+    }
+
+    .course-card .meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      border-top: 1px solid #edf2fa;
+      padding-top: 0.9rem;
+      font-size: 0.9rem;
+      color: #3f5780;
+    }
+
+    .meta span {
+      background: #f2f7ff;
+      padding: 0.2rem 0.9rem;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+
+    .meta .duration {
+      background: transparent;
+      padding-left: 0;
+      font-weight: 400;
+    }
+
+    /* extra courses / short list */
+    .extra-courses {
+      background: #f5f9ff;
+      border-radius: 1.8rem;
+      padding: 1.8rem 2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+      justify-content: space-between;
+      border: 1px solid #e2ebf9;
+    }
+      transform: translateY(-6px);
+      border-color: #b7cef0;
+      box-shadow: 0 16px 30px -10px rgba(25, 60, 130, 0.12);
+
+    .extra-courses p {
+      font-weight: 500;
+      color: #1a3153;
+      font-size: 1.05rem;
+    }
+      box-shadow: 0 8px 22px -6px rgba(0, 20, 40, 0.08);
+      border: 1px solid #eef3fc;
+      transition: all 0.2s ease;
+
+    .extra-tags {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+      background: #ffffff;
+      gap: 0.6rem 1.2rem;
+    }
+
+
+    .extra-tags span {
+      background: white;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1f4070;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+      border: 1px solid #d4e2f8;
+    }
+
+    /* footer / contact */
+    .footer-area {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 2px solid #eef2f9;
+      padding-top: 2rem;
+      margin-top: 1rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 2rem;
+    }
+
+    .contact-info div {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      color: #1d3557;
+    }
+
+    .contact-info .label {
+      font-weight: 300;
+      color: #4c6a8f;
+    }
+
+    .btn-inquire {
+      background: #0b1b33;
+      color: white;
+      border: none;
+      padding: 0.8rem 2.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: default;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: 0.15s;
+    }
+
+    .btn-inquire:hover {
+      background: #1d3b66;
+      transform: scale(1.02);
+    }
+
+    .footer-note {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #657a9f;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* responsive touches */
+    @media (max-width: 650px) {
+      .container { padding: 1.5rem 1rem; }
+      .institute-header { flex-direction: column; align-items: start; gap: 1rem; }
+      .brand h1 { font-size: 1.8rem; }
+      .hero h2 { font-size: 1.6rem; }
+      .course-grid { gap: 1.2rem; }
+      .extra-courses { flex-direction: column; align-items: start; gap: 0.8rem; }
+      .footer-area { flex-direction: column; align-items: start; gap: 1rem; }
+      .contact-info { flex-direction: column; gap: 0.3rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="institute-header">
+    <div class="brand">
+      <h1>⚡ SkillForge <span>est. 2026</span></h1>
+      <div class="tagline">advance your career with industry‑aligned training</div>
+    </div>
+    <div class="cta-top">📞 +91 98765 43210</div>
+  </header>
+
+  <!-- hero -->
+  <div class="hero">
+    <h2>🚀 Software & Cloud training</h2>
+    <p><span class="highlight">DevOps · Data Science · Full‑Stack</span> — hands‑on courses designed for working professionals and fresh graduates.</p>
+  </div>
+
+  <!-- main course grid -->
+  <div class="section-title">
+    🧑‍🏫 our core programs
+    <small>— expert-led, project based</small>
+  </div>
+
+  <div class="course-grid">
+    <!-- card 1: DevOps -->
+    <div class="course-card">
+      <div class="course-icon">🔄</div>
+      <h3>DevOps</h3>
+      <span class="badge">⚙️ CI/CD · Kubernetes</span>
+      <p>Automate, monitor & scale with Docker, Jenkins, Terraform, and AWS.</p>
+      <div class="meta">
+        <span>📅 12 weeks</span>
+        <span class="duration">💻 40+ labs</span>
+      </div>
+    </div>
+
+    <!-- card 2: Data Science -->
+    <div class="course-card">
+      <div class="course-icon">📊</div>
+      <h3>Data Science</h3>
+      <span class="badge">🐍 Python · ML · AI</span>
+      <p>From data wrangling to deployment — pandas, scikit‑learn, TensorFlow.</p>
+      <div class="meta">
+        <span>📅 16 weeks</span>
+        <span class="duration">🧪 50+ projects</span>
+      </div>
+    </div>
+
+    <!-- card 3: Full Stack -->
+    <div class="course-card">
+      <div class="course-icon">🌐</div>
+      <h3>Full‑Stack</h3>
+      <span class="badge">⚛️ React · Node · MongoDB</span>
+      <p>Build and deploy modern web apps with JavaScript, Express, and cloud DB.</p>
+      <div class="meta">
+        <span>📅 14 weeks</span>
+        <span class="duration">📱 8 real‑world apps</span>
+      </div>
+    </div>
+
+    <!-- card 4: Cloud Architect -->
+    <div class="course-card">
+      <div class="course-icon">☁️</div>
+      <h3>Cloud Arch.</h3>
+      <span class="badge">AWS · Azure · GCP</span>
+      <p>Design secure, scalable cloud infrastructure and migration strategies.</p>
+      <div class="meta">
+        <span>📅 10 weeks</span>
+        <span class="duration">🔐 20+ hands‑on</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- additional courses (software related) -->
+  <div class="extra-courses">
+    <p>🧰 also available :</p>
+    <div class="extra-tags">
+      <span>Cybersecurity</span>
+      <span>Data Analytics</span>
+      <span>Machine Learning Ops</span>
+      <span>Python for AI</span>
+      <span>Agile & Scrum</span>
+    </div>
+  </div>
+
+  <!-- footer / contact and CTA -->
+  <div class="footer-area">
+    <div class="contact-info">
+      <div><span class="label">📧</span> info@skillforge.in</div>
+      <div><span class="label">📞</span> +91 98765 43210</div>
+      <div><span class="label">📍</span> Bangalore · Hyderabad · remote</div>
+    </div>
+    <div class="btn-inquire">📝 enquire now</div>
+    <div class="footer-note">
+      © 2026 SkillForge Institute · all courses include certification & placement support
+    </div>
+  </div>
+
+</div>
+<!-- end container -->
+</body>
+</html>

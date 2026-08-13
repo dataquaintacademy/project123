@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Courses · SkillForge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f8fe;
+            padding: 2rem 1.5rem;
+            color: #1a2639;
+        }
+
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2.5rem;
+            box-shadow: 0 16px 40px -10px rgba(0, 20, 40, 0.12);
+            padding: 2rem 2rem 2.5rem;
+        }
+
+        /* header */
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #eef2f9;
+            padding-bottom: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .top h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #0b1b33;
+        }
+
+        .top h1 span {
+            background: #d6e4ff;
+            padding: 0.1rem 0.9rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #1d4a9e;
+            margin-left: 0.5rem;
+            display: inline-block;
+        }
+
+        .back-link {
+            color: #1d4a9e;
+            font-weight: 500;
+            text-decoration: none;
+            background: #edf4ff;
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            border: 1px solid #cddffa;
+        }
+
+        .back-link:hover {
+            background: #dce8ff;
+        }
+
+        /* course list – simple & clean */
+        .course-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .course-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: #fafcff;
+            padding: 0.9rem 1.5rem;
+            border-radius: 60px;
+            border: 1px solid #e8eff9;
+            transition: 0.15s;
+        }
+
+        .course-row:hover {
+            background: #f2f8ff;
+            border-color: #b9cef0;
+        }
+
+        .course-name {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #0a1d38;
+        }
+
+        .course-name .emoji {
+            font-size: 1.3rem;
+        }
+
+        .course-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem 1.5rem;
+            flex-wrap: wrap;
+            font-size: 0.9rem;
+            color: #2d476b;
+        }
+
+        .course-meta .badge {
+            background: #e1ebfb;
+            padding: 0.15rem 1rem;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #1f4279;
+            font-size: 0.75rem;
+            letter-spacing: 0.2px;
+        }
+
+        .course-meta .duration {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            color: #3e5b81;
+        }
+
+        .course-meta .level {
+            background: #eef3fc;
+            padding: 0.15rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #1f3d68;
+        }
+
+        /* small extra section – short */
+        .extra-note {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #eef2f9;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+            color: #2f4b73;
+        }
+
+        .extra-note .pill {
+            background: #e2ebf9;
+            padding: 0.2rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+
+        .footer-mini {
+            margin-top: 1.8rem;
+            font-size: 0.8rem;
+            color: #6f84aa;
+            text-align: center;
+        }
+
+        @media (max-width: 700px) {
+            .page { padding: 1.5rem 1rem; }
+            .course-row { 
+                border-radius: 2rem; 
+                padding: 0.9rem 1.2rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+            .course-meta { width: 100%; justify-content: flex-start; }
+            .top { flex-direction: column; align-items: start; gap: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- header with back link -->
+    <div class="top">
+        <h1>📚 Courses <span>software</span></h1>
+        <a href="#" class="back-link">← back to home</a>
+    </div>
+
+    <!-- course list – only a few, as requested -->
+    <div class="course-list">
+
+        <!-- 1 -->
+        <div class="course-row">
+            <div class="course-name">
+                <span class="emoji">🔄</span> DevOps
+            </div>
+            <div class="course-meta">
+                <span class="badge">CI/CD · K8s</span>
+                <span class="duration">⏳ 12 weeks</span>
+                <span class="level">intermediate</span>
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="course-row">
+            <div class="course-name">
+                <span class="emoji">📊</span> Data Science
+            </div>
+            <div class="course-meta">
+                <span class="badge">Python · ML</span>
+                <span class="duration">⏳ 16 weeks</span>
+                <span class="level">advanced</span>
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="course-row">
+            <div class="course-name">
+                <span class="emoji">🌐</span> Full‑Stack Web
+            </div>
+            <div class="course-meta">
+                <span class="badge">React · Node</span>
+                <span class="duration">⏳ 14 weeks</span>
+                <span class="level">beginner+</span>
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="course-row">
+            <div class="course-name">
+                <span class="emoji">☁️</span> Cloud Architecture
+            </div>
+            <div class="course-meta">
+                <span class="badge">AWS · Azure</span>
+                <span class="duration">⏳ 10 weeks</span>
+                <span class="level">intermediate</span>
+            </div>
+        </div>
+
+        <!-- 5 – just one more to keep it short -->
+        <div class="course-row">
+            <div class="course-name">
+                <span class="emoji">🤖</span> AI & ML Ops
+            </div>
+            <div class="course-meta">
+                <span class="badge">MLflow · Kubeflow</span>
+                <span class="duration">⏳ 8 weeks</span>
+                <span class="level">advanced</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- tiny extra: quick info (no heavy content) -->
+    <div class="extra-note">
+        <span>📌 all courses include hands‑on labs & certification</span>
+        <span class="pill">🎯 next batch: aug 2026</span>
+    </div>
+
+    <div class="footer-mini">
+        SkillForge Institute · Bengaluru · remote
+    </div>
+
+</div>
+<!-- end page -->
+
+</body>
+</html>
